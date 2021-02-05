@@ -43,6 +43,8 @@ grid-column: span 4;
 /* About me section under pic */
 /* HAS NO GRID ON IT!!!!!!!!!!! */
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
 .about{
   margin-left: 60px;
   margin-right: 90px;
@@ -71,6 +73,7 @@ grid-column: span 4;
 .heading-employment{
   color: #fdfef9;
   background-color:#373737;
+  width:100%;
 }
 
 /* Blue Arrow facing to the right for job title */
@@ -205,28 +208,37 @@ h1, p {
   width: 20px;
   background-color: black;
   border-radius: 50%;
-  display: inline-block;
+  margin:2px;
+  float: right;
+  /* display: inline-block; */
 }
 .dot-b {
   height: 20px;
   width: 20px;
   background-color: #44a5d1;
   border-radius: 50%;
-  display: inline-block;
+  margin:2px;
+  float: right;
+  /* display: inline-block; */
 }
 .dot-g {
   height: 20px;
   width: 20px;
   background-color: #69a334;
   border-radius: 50%;
-  display: inline-block;
+  margin:2px;
+  float: right;
+  
+  /* display: inline-block; */
 }
 .dot-y {
   height: 20px;
   width: 20px;
   background-color: #ffbd26;
   border-radius: 50%;
-  display: inline-block;
+  margin:2px;
+  float: right;
+  /* display: inline-block; */
 }
 
 
