@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <title>trapizoid</title>
+    <Script type="text/javascript">
+        var height = prompt("Input height")
+        var width = prompt("Insert Width ")
+        var count = 0;
+        var shape = ""
+        // var odd = ((width%2)==1)
+
+        if ((width / 2) < length) {
+            console.log("Impossible shape!")
+        } else {
+            for (var i = 0; i < height; i++) {
+                var row = ""
+                for (var j = 0; j< width ; j++) {
+                    if (count > j) {
+                        row += " "
+                    } else {
+                        row += "*"
+                    }
+                }
+                shape += row + "\n"
+                width--
+                count++
+            }
+            console.log(shape)
+        }
+
+    </Script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

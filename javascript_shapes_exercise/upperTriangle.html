@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Upper Triangle
+    </title>
+
+    <script type="text/javascript">
+
+
+        var length = prompt("Input length")
+        var shape = ""
+
+        for (var j =0; j<length; j++) {
+            row = ""
+            for(var i = 0; i<length; i++){
+                if(j>i){
+                    row+=" "
+                }else {
+                    row +="*"
+                }
+            }
+            shape += row + "\n"
+        }
+        console.log(shape)
+    </script>
+
+</head>
+
+<body>
+</body>
+
+</html>

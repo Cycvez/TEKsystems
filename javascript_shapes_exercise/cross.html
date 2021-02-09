@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Cross Html
+    </title>
+
+    <script type="text/javascript">
+
+        var size = prompt("Input Size")
+        var shape=""
+
+
+        for (var i = 0; i < size; i++) {
+            var row = ""
+            var count = size-1-i
+            for (var j = 0; j < size; j++) {
+                if (i == j||j==count) {
+                    row += "x"
+                } else {
+                    row += " "
+                }
+
+
+            }
+            shape+= row + "\n"
+        }
+
+        console.log("Input Size:"+ size +"\n")
+        console.log(shape)
+
+    </script>
+
+</head>
+
+<body>
+</body>
+
+</html>

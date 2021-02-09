@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        CheckerBoard Html
+    </title>
+
+    <script type="text/javascript">
+
+        var w = prompt("Enter width")
+        var h = prompt("Enter height")
+        console.log("Input width:" + w)
+        console.log("input heigh:" + h)
+        console.log("\n")
+        console.log("Shape:")
+
+        var shape = ""
+
+        for (var i = 0; i < h; i++) {
+            var row = ""
+            if (i % 2 == 0) {
+                for (var j = 0; j < w; j++) {
+                    if (j % 2 == 0) {
+                        row += "*"
+                    } else {
+                        row += " "
+                    }
+                }
+            } else {
+                for (var j = 0; j < w; j++) {
+                    if (j % 2 == 0) {
+                        row += " "
+                    } else {
+                        row += "*"
+                    }
+                }
+            }
+            shape += row + "\n"
+        }
+
+        console.log(shape)
+
+    </script>
+
+</head>
+
+<body>
+</body>
+
+</html>
