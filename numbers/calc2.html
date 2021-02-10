@@ -18,6 +18,10 @@
 
             for (var i = 0; i < input_array.length; i++) {
 
+                // This is where you left off..... a String [] comes in the form of array = ["3+4-7" "5-3+2+9" "3+2+1"]
+                // just loop through each index, split it , evaluatie it..... might need to combine the switch with this step
+                // finish tomorrow 2/10/21
+
 
                 if (0 <= input_array[i] && input_array[i] <= 9) {
 
@@ -43,9 +47,11 @@
         input = input.replace(/\s/g, "")
 
         //split every character of user input
-        var input_array = input.split("")
+        var input_array = input.split(";")
+        input_array.splice(-1)
+    
 
-
+        console.log(input_array)
 
 
         var sequence_Array = mathSequenceToArray(input_array)
