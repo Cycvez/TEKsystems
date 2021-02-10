@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Calculator
+    </title>
+
+    <script type="text/javascript">
+
+
+        //takes in array of 1 digit String numbers and operands, concatinates multidigit numbers and singles out operands
+        function mathSequenceToArray(input_array) {
+
+            var wholeNumber = ""
+            var sequence_Array = new Array()
+            var count = 0
+
+            for (var i = 0; i < input_array.length; i++) {
+
+
+                if (0 <= input_array[i] && input_array[i] <= 9) {
+
+                    wholeNumber = wholeNumber + input_array[i]
+
+                } else {
+                    sequence_Array[count] = wholeNumber
+                    count++
+                    sequence_Array[count] = input_array[i]
+                    count++
+                    wholeNumber = ""
+                }
+            }
+
+            sequence_Array[count] = wholeNumber
+            return sequence_Array
+        }
+
+
+
+        var input = prompt("Enter a sequence of numbers for me to sum")
+        //removes white spaces
+        input = input.replace(/\s/g, "")
+
+        //split every character of user input
+        var input_array = input.split("")
+
+
+
+
+        var sequence_Array = mathSequenceToArray(input_array)
+
+        var sum = 0 + +sequence_Array[0]
+
+        for (var i = 1; i < sequence_Array.length; i+=2) {
+            
+            var operand = sequence_Array[i]
+
+            switch (operand) {
+                case '+':
+                    sum += +sequence_Array[i+1]
+                    console.log("adding")
+                    continue
+
+                case '-':
+                    sum -= +sequence_Array[i+1]
+                    console.log("subtracting")
+                    continue
+
+                default:
+                    console.log("i messed up somewhere")
+            }
+        }
+        console.log("it should compute and print the answer:")
+        console.log(sum)
+
+    </script>
+
+</head>
+
+<body>
+</body>
+
+</html>
