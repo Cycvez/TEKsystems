@@ -9,34 +9,37 @@
     <script type="text/javascript">
 
 
-        //takes in array of 1 digit String numbers and operands, concatinates multidigit numbers and singles out operands
+        // takes in array of 1 digit String numbers and operands, concatinates multidigit numbers and singles out operands
         function mathSequenceToArray(input_array) {
 
-            var wholeNumber = ""
-            var sequence_Array = new Array()
-            var count = 0
+            // input_array=[["3","+","4","-","70"],["5","-","3","+","2","+"],["9","3","+","2+1"]]
+            var returned_Array = []
 
             for (var i = 0; i < input_array.length; i++) {
 
-                // This is where you left off..... a String [] comes in the form of array = ["3+4-7" "5-3+2+9" "3+2+1"]
-                // just loop through each index, split it , evaluatie it..... might need to combine the switch with this step
-                // finish tomorrow 2/10/21
+                var tempArray = new Array()
+                var currentNumber = ""
+                var count = 0
 
+                for (var j = 0; j < input_array[i].length; j++) {
 
-                if (0 <= input_array[i] && input_array[i] <= 9) {
+                    if (0 <= input_array[i][j] && input_array[i][j] <= 9) {
 
-                    wholeNumber = wholeNumber + input_array[i]
+                        currentNumber = currentNumber + input_array[i][j]
 
-                } else {
-                    sequence_Array[count] = wholeNumber
-                    count++
-                    sequence_Array[count] = input_array[i]
-                    count++
-                    wholeNumber = ""
+                    } else {
+                        tempArray[count] = currentNumber
+                        count++
+                        tempArray[count] = input_array[i]
+                        count++
+                        currentNumber = ""
+                    }
+                    
                 }
+                returned_Array[i] = tempArray
             }
 
-            sequence_Array[count] = wholeNumber
+            returned_Array[count] = wholeNumber
             return sequence_Array
         }
 
@@ -49,36 +52,42 @@
         //split every character of user input
         var input_array = input.split(";")
         input_array.splice(-1)
-    
+
+
+        input_array.forEach(function (v, i, a) {
+            a[i] = v.split("")
+        });
 
         console.log(input_array)
 
 
-        var sequence_Array = mathSequenceToArray(input_array)
+        // var sequence_Array = mathSequenceToArray(input_array)
+        // console.log("original array" + input_array)
+        // console.log("sequence array" + sequence_Array)
 
-        var sum = 0 + +sequence_Array[0]
+        // var sum = 0 + +sequence_Array[0]
 
-        for (var i = 1; i < sequence_Array.length; i+=2) {
-            
-            var operand = sequence_Array[i]
+        // for (var i = 1; i < sequence_Array.length; i += 2) {
 
-            switch (operand) {
-                case '+':
-                    sum += +sequence_Array[i+1]
-                    console.log("adding")
-                    continue
+        //     var operand = sequence_Array[i]
 
-                case '-':
-                    sum -= +sequence_Array[i+1]
-                    console.log("subtracting")
-                    continue
+        //     switch (operand) {
+        //         case '+':
+        //             sum += +sequence_Array[i + 1]
+        //             console.log("adding")
+        //             continue
 
-                default:
-                    console.log("i messed up somewhere")
-            }
-        }
-        console.log("it should compute and print the answer:")
-        console.log(sum)
+        //         case '-':
+        //             sum -= +sequence_Array[i + 1]
+        //             console.log("subtracting")
+        //             continue
+
+        //         default:
+        //             console.log("i messed up somewhere")
+        //     }
+        // }
+        // console.log("it should compute and print the answer:")
+        // console.log(sum)
 
     </script>
 
